@@ -12,8 +12,8 @@ import NavBar from "./navBar";
 import NewQuestion from "./newQuestion";
 import QuestionScreen from "./questionScreen";
 import Signin from "./signin";
-import { Provider } from "react-redux";
-import store from "../store/store";
+// import { Provider } from "react-redux";
+// import store from "../store/store";
 
 const navBarLinks = [
   {
@@ -67,21 +67,19 @@ function App({ authedUser, dispatch, loading }) {
   }, [authedUser, dispatch]);
 
   return (
-    <Provider store={store}>
-      <>
-        <NavBar navBarLinks={navBarLinks} />
-        <LoadingBar />
-        <div id="app">
-          <div className="container mt-5 mx-auto" style={{ maxWidth: "720px" }}>
-            {authedUser
-              ? !loading
-                ? authenticatedRoutes
-                : null
-              : nonAuthenticatedRoutesRoutes}
-          </div>
+    <>
+      <NavBar navBarLinks={navBarLinks} />
+      <LoadingBar />
+      <div id="app">
+        <div className="container mt-5 mx-auto" style={{ maxWidth: "720px" }}>
+          {authedUser
+            ? !loading
+              ? authenticatedRoutes
+              : null
+            : nonAuthenticatedRoutesRoutes}
         </div>
-      </>
-    </Provider>
+      </div>
+    </>
   );
 }
 
