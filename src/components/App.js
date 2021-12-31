@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-// import { connect } from "react-redux";
-import connect from "react-redux/lib/connect/connect";
+import { connect } from "react-redux";
+// import connect from "react-redux/lib/connect/connect";
 import { Route, Switch } from "react-router-dom";
 // import { Routes, Route } from "react-router-dom";
 import { fetchDataAsync } from "../store/slices/common.slice";
